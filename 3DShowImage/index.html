@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>3D Carousel</title>
+  
+    <link rel="stylesheet" href="css/normalize.min.css">
+
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      body {
+  background-color: #222;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: relative;
+  margin: 150px auto 0;
+  width: 220px;
+  height: 150px;
+  transform-style: preserve-3d;
+  perspective-origin: 50% -50%;
+  perspective: 900px;
+}
+
+.light {
+  position: absolute;
+  left: -100px;
+  top: -135px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 200px rgba(255, 255, 255, 0.7);
+  transform: translate3d(0, 75px, -400px) rotateX(90deg)
+}
+
+.light_ray {
+  position: absolute;
+  left: -100px;
+  bottom: 0;
+  border-width: 0 210px 800px;
+  border-style: solid;
+  border-color: transparent transparent rgba(255, 255, 255, 0.04);
+  transform: translateZ(-400px);
+}
+
+.el {
+  position: absolute;
+  width: 220px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  transform-origin: 50% 50% -400px;
+  transition: transform 0.3s ease-in;
+  font-size: 130px;
+}
+
+.el:nth-child(1) {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.el:nth-child(2) {
+  background-color: rgba(150, 0, 220, 0.7);
+}
+
+.el:nth-child(3) {
+  background-color: rgba(0, 255, 255, 0.7);
+}
+
+.el:nth-child(4) {
+  background-color: rgba(0, 255, 0, 0.7);
+}
+
+.el:nth-child(5) {
+    background-color: rgba(200, 100, 0, 0.7);
+}
+
+.el:nth-child(6) {
+  background-color: rgba(0, 0, 255, 0.7);
+}
+
+.el:nth-child(7) {
+  background-color: rgba(255, 0, 255, 0.7);
+}
+
+.el:nth-child(8) {
+  background-color: rgba(0, 100, 0, 0.7);
+}
+
+.el:nth-child(9) {
+  background-color: rgba(255, 255, 0, 0.7);
+}
+
+.controls {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.controls button {
+  padding: 0 20px;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+  <div class='container'>
+  <div class='el' style='transform: rotateY(0deg);'>1</div>
+  <div class='el' style='transform: rotateY(40deg);'>2</div>
+  <div class='el' style='transform: rotateY(80deg);'>3</div>
+  <div class='el' style='transform: rotateY(120deg);'>4</div>
+  <div class='el' style='transform: rotateY(160deg);'>5</div>
+  <div class='el' style='transform: rotateY(200deg);'>6</div>
+  <div class='el' style='transform: rotateY(240deg);'>7</div>
+  <div class='el' style='transform: rotateY(280deg);'>8</div>
+  <div class='el' style='transform: rotateY(320deg);'>9</div>
+  <div class='light'></div>
+  <div class='light_ray'></div>
+</div>
+<div class='controls'>
+  <button class='prev'>&#8592;</button>
+  <button class='next'>&#8594;</button>
+</div>
+  <script src='./js/jquery.min.js'></script>
+  <script src="./js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
